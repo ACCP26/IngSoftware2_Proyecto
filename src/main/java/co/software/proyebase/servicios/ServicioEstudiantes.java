@@ -7,11 +7,15 @@ import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
 import lombok.AllArgsConstructor;
 import java.io.Serializable;
+import org.springframework.beans.factory.annotation.Autowired;
+
 @AllArgsConstructor
 @Service
 public class ServicioEstudiantes implements Serializable{
 
+
     private ModelMapper modelMapper;
+
     private final RepositorioEstudiantes repoEstudiantes;
 
     public EstudianteDto registrar(EstudianteDto estudianteDto){
