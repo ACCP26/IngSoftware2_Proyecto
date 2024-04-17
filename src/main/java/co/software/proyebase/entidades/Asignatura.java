@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity(name = "Docente")
 @Table(name = "Docente")
-public class Docente implements Serializable{
+public class Asignatura implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_DOCENTE")
