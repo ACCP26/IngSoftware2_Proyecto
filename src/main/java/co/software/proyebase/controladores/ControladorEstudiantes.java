@@ -10,11 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api")
-@CrossOrigin("http://localhost:4200")
+@RequestMapping("/api/estudiantes")
+@CrossOrigin(origins = "${spring.webmvc.cors.allowed-origins)",
+        methods = {RequestMethod.POST})
 
 public class ControladorEstudiantes {
 
