@@ -9,22 +9,22 @@ import java.io.Serializable;
 @SuppressWarnings("unused")
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "Docente")
-@Table(name = "Docente")
+@Entity(name = "Asignatura")
+@Table(name = "Asignatura")
 public class Asignatura implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_DOCENTE")
-    @SequenceGenerator(name = "SEQ_DOCENTE",sequenceName = "SEQ_DOCENTE",allocationSize = 1)
-    @Column(name = "DOC_SERIAL",nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_ASIGNATURA")
+    @SequenceGenerator(name = "SEQ_ASIGNATURA",sequenceName = "SEQ_ASIGNATURA",allocationSize = 1)
+    @Column(name = "ASI_SERIAL",nullable = false)
     private long serial;
 
-    @Column(name = "DOC_COD",nullable = false)
+    @Column(name = "ASI_COD",nullable = false)
     private long codigo;
 
-    @Column(name = "DOC_NOMBRE",nullable = false)
+    @Column(name = "ASI_NOMBRE",nullable = false)
     private String nombre;
 
-    @Column(name = "DOC_PERIODO",nullable = false)
-    private long periodo;
+    @Column(name = "ASI_CORTE",nullable = false)
+    private long corte;
 }
