@@ -21,6 +21,8 @@ public class ActividadDto implements Serializable{
     private long corte;
     @NotBlank(message = "El peso de la actividad debe ser obligatorio")
     private long peso;
+    @NotBlank(message = "La nota de la actividad debe ser obligatoria")
+    private long nota;
 
 
 }

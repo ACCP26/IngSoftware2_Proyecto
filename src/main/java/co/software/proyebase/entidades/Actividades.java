@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -30,6 +31,15 @@ public class Actividades implements Serializable{
     @Column(name = "ACT_PESO",nullable = false)
     private long peso;
 
+    @Column(name = "ACT_NOTA",nullable = false)
+    private long nota;
     @Column(name = "ACT_DESCRIPCION",nullable = false)
     private String descripcion;
+
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    @JoinTable(
+            name = "actividad_asignatura", joinColumns = @JoinColumn(name = "act_numero",referencedColumnName = "ACT_SERIAL"),
+            inverseJoinColumns = @JoinColumn(name = "asi_codigo",referencedColumnName = "ASI_CODIGO")
+    )
+    List<Asignatura> asignatura;
 }
