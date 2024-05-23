@@ -2,6 +2,7 @@ package co.software.proyebase.entidades;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity(name = "Asignaturas")
 @Table(name = "ASIGNATURAS")
+@Builder
 public class Asignatura {
 
     @Id
