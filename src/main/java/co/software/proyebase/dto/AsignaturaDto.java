@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-
+@NotNull
 public class AsignaturaDto implements Serializable{
     private long Serial;
     @NotBlank(message = "El campo codigo no debe estar vacio")

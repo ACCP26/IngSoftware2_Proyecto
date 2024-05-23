@@ -19,7 +19,7 @@ public class ServicioAsignatura implements Serializable {
     private ModelMapper modelMapper;
 
     private final RepositorioAsignatura repositorioAsignatura;
-    @Qualifier("compositeMeterRegistry")
+    @Qualifier("jacksonObjectMapper")
     private Object AsignaturaDto;
 
     public AsignaturaDto registrar(AsignaturaDto entidadDto) {
