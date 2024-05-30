@@ -1,5 +1,6 @@
 package co.software.proyebase.servicios;
 
+import co.software.proyebase.controladores.ControladorNota;
 import co.software.proyebase.repositorios.RepositorioNota;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,9 @@ public class ServicioNota {
 
     public Optional<Nota> obtenerNota(Long id) {
         return repositorioNota.findById(id);
+    }
+    public Class<ControladorNota> agregarNota(Long id) {
+        return ControladorNota.class;
     }
 }
 

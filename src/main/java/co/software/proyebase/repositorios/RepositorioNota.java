@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface RepositorioNota extends JpaRepository<Nota, Long> {
 
-    List<Nota> findByValorBetween(Double minValor, Double maxValor);
+    List<Nota> findByValorBetween(Double RangoMinimo, Double RangoMaximo);
     @Query("SELECT n FROM Nota n WHERE n.estudiante.id = :estudianteId")
     List<Nota> findByEstudianteId(@Param("estudianteId") Long estudianteId);
 }
