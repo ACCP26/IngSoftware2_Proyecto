@@ -12,15 +12,12 @@ import java.io.Serializable;
 @Data
 @ToString
 @NoArgsConstructor
+public class NotaDto implements Serializable {
 
-public class ActividadDto implements Serializable{
-    private long numero;
+    private long serial;
     @NotBlank(message = "El nombre de la actividad debe ser obligatorio")
-    private String nombre;
-    @NotBlank(message = "El corte de la actividad debe ser obligatorio")
-    private long corte;
-    @NotBlank(message = "El peso de la actividad debe ser obligatorio")
-    private long peso;
-    private String descripcion;
+    private long calificacion;
     private Long estudianteID;
+    private Long actividadID;
+
 }

@@ -26,9 +26,10 @@ public class Asignatura {
     @Column(name = "ASI_PERIODO",nullable = false)
     private String periodo;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "asignatura", cascade = CascadeType.ALL)
-    private List<Estudiantes> estudiantes;
-
     @ManyToMany(mappedBy = "asignatura")
-    List<Actividades> actividades;
+    List<Estudiantes> estudiantes;
+
+    @ManyToOne(fetch =FetchType.EAGER )
+    @JoinColumn(name = "ACT_NUMERO")
+    List<Actividades> actividad;
 }

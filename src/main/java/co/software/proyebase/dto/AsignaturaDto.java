@@ -18,4 +18,6 @@ public class AsignaturaDto {
     private String nombre;
     @NotBlank(message = "El periodo de la asignatura no debe estar vacio")
     private String periodo;
+    private Long estudianteID;
+    private Long actividadID;
 }

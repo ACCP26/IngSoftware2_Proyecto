@@ -20,4 +20,8 @@ public class EstudianteDto implements Serializable {
     private String apellido;
     @NotNull(message = "La identificacion del estudiante es obligatoria")
     private long identificacion;
+    private Long actividad;
+    private Long nota;
+    private Long asignaturaID;
+
 }
