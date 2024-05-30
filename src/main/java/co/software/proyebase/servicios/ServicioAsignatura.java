@@ -2,6 +2,7 @@ package co.software.proyebase.servicios;
 
 import co.software.proyebase.dto.AsignaturaDto;
 import co.software.proyebase.entidades.Asignatura;
+import co.software.proyebase.entidades.Estudiantes;
 import co.software.proyebase.exception.ResourceNotFoundException;
 import co.software.proyebase.repositorios.RepositorioAsignaturas;
 import org.modelmapper.TypeToken;
@@ -35,9 +36,9 @@ public class ServicioAsignatura {
         return modelMapper.map(asignatura, AsignaturaDto.class);
     }
 
-    public List<Asignatura> obtenerEstudiantes(long codigo){
-        TypeToken<List<Asignatura>> typeToken = new TypeToken<>(){};
-        return modelMapper.map(repoAsignaturas.findAsignaturaAndAsignaturaEstudiantesById(codigo), typeToken.getType());
+    public List<Estudiantes> obtenerEstudiantes(Long codigo){
+        TypeToken<List<Estudiantes>> typeToken = new TypeToken<>(){};
+        return modelMapper.map(repoAsignaturas.findEstudiantesByAsignaturaCodigo(codigo), typeToken.getType());
     }
     public AsignaturaDto actualizar(AsignaturaDto asignaturaDto){
         repoAsignaturas.save(modelMapper.map(asignaturaDto,Asignatura.class));

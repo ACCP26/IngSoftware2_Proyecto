@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,8 +22,8 @@ public class EstudianteDto implements Serializable {
     private String apellido;
     @NotNull(message = "La identificacion del estudiante es obligatoria")
     private long identificacion;
-    private Long actividad;
-    private Long nota;
-    private Long asignaturaID;
+    private List<ActividadDto> actividad;
+    private List<NotaDto> nota;
+    private List<AsignaturaDto> asignaturaID;
 
 }

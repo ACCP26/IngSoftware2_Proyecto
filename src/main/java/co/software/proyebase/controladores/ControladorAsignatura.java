@@ -2,6 +2,7 @@ package co.software.proyebase.controladores;
 
 import co.software.proyebase.dto.AsignaturaDto;
 import co.software.proyebase.entidades.Asignatura;
+import co.software.proyebase.entidades.Estudiantes;
 import co.software.proyebase.servicios.ServicioAsignatura;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -43,7 +44,7 @@ public class ControladorAsignatura {
         return ResponseEntity.ok(servicioAsignatura.obtenerAsignatura(codigo));
     }
     @GetMapping("/estudiantes")
-    public ResponseEntity<List<Asignatura>> obtenerEstudiantes(@PathVariable("codigo")Long codigo){
+    public ResponseEntity<List<Estudiantes>> obtenerEstudiantes(@PathVariable("codigo")Long codigo){
         log.info("Ingresa el codigo de la asignatura" + codigo);
         return ResponseEntity.ok(servicioAsignatura.obtenerEstudiantes(codigo));
     }

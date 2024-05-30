@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -18,6 +20,6 @@ public class AsignaturaDto {
     private String nombre;
     @NotBlank(message = "El periodo de la asignatura no debe estar vacio")
     private String periodo;
-    private Long estudianteID;
-    private Long actividadID;
+    private List<EstudianteDto> estudianteID;
+    private List<ActividadDto> actividadID;
 }
