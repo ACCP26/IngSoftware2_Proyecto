@@ -31,5 +31,5 @@ public class Asignatura {
 
     @ManyToOne(fetch =FetchType.EAGER )
     @JoinColumn(name = "ACT_NUMERO")
-    List<Actividades> actividad;
+    private Actividades actividad;
 }

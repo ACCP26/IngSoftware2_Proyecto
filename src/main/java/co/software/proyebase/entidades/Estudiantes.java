@@ -26,14 +26,13 @@ public class Estudiantes{
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
     @JoinTable(
-            name = "estudiantes_actividades",joinColumns = @JoinColumn(name = "est_id",referencedColumnName = "EST_ID"),
-            inverseJoinColumns = @JoinColumn(name = "act_numero",referencedColumnName = "ACT_SERIAL")
+            name = "estudiante_actividades",joinColumns = @JoinColumn(name = "est_id",referencedColumnName = "EST_ID"),
+            inverseJoinColumns = @JoinColumn(name = "act_seria",referencedColumnName = "ACT_SERIAL")
     )
-    private Actividades actividad;
+    List< Actividades> actividad;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "estudiante",cascade = CascadeType.ALL)
-    @JoinColumn(name = "NOT_SERIAL")
-    private Notas nota;
+    List <Notas> nota;
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
     @JoinTable(

@@ -26,10 +26,10 @@ public class Notas implements Serializable{
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "EST_ID")
-    List <Estudiantes> estudiante;
+    private Estudiantes estudiante;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ACT_SERIAL")
-    List<Actividades> actividad;
+    private Actividades actividad;
 
 }
