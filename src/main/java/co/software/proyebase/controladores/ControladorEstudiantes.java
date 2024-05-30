@@ -51,6 +51,12 @@ public class ControladorEstudiantes {
         return new ResponseEntity<>(estudianteDto, HttpStatus.CREATED);
     }
 
+    @GetMapping("/codigoAsignatura/{codigo}")
+    public ResponseEntity<List<EstudianteDto>> obtenerEstudiantesPorAsignatura(@PathVariable("codigo") Long codigo) {
+        List<EstudianteDto> estudiantes = servicioEstudiante.obtenerEstudiantesPorAsignatura(codigo);
+        return ResponseEntity.ok(estudiantes);
+    }
+
     @DeleteMapping("/{serial}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(@PathVariable("serial") Long serial){

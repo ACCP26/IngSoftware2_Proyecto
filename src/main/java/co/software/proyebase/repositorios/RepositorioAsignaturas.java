@@ -12,4 +12,6 @@ import java.util.List;
 public interface RepositorioAsignaturas extends CrudRepository<Asignatura, Long>, JpaSpecificationExecutor<Asignatura> {
     @Query("SELECT e.estudiantes FROM Asignaturas e where e.codigo = :codigo ")
     List<Estudiantes> findEstudiantesByAsignaturaCodigo(@Param("codigo") Long codigo);
+    Asignatura findByCodigo(Long codigo);
+
 }

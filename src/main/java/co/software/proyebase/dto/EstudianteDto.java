@@ -24,6 +24,6 @@ public class EstudianteDto implements Serializable {
     private long identificacion;
     private List<ActividadDto> actividad;
     private List<NotaDto> nota;
-    private List<AsignaturaDto> asignaturaID;
+    private List<Long> asignaturaID;
 
 }
