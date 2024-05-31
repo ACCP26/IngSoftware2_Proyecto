@@ -14,11 +14,13 @@ import java.io.Serializable;
 @Table(name = "ESTUDIANTES")
 public class Estudiantes implements Serializable{
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_ESTUDIANTES")
     @SequenceGenerator(name = "SEQ_ESTUDIANTES",sequenceName = "SEQ_ESTUDIANTES",allocationSize = 1)
     @Column(name = "EST_SERIAL",nullable = false)
     private long serial;
+
 
     @Column(name = "EST_ID",nullable = false)
     private long identificacion;
@@ -28,4 +30,8 @@ public class Estudiantes implements Serializable{
 
     @Column(name = "EST_APELLIDO",nullable = false)
     private String apellido;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ASI_CODIGO")
+    private Asignatura asignatura;
 }
